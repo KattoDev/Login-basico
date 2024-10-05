@@ -17,8 +17,10 @@ if (isset($_POST["register"])) {
     ) {
         $message = "Debe rellenar todos los campos";
     } else {
-        $query = mysql_query("SELECT * FROM usertbl WHERE username='" . $username . "'");
-        $numrows = mysql_num_rows($query);
+
+        $sql = "SELECT * FROM usertbl WHERE username='" . $username . "'";
+        $query = mysqli_query($sql);
+        $numrows = mysqli_num_rows($query);
 
         if ($numrows == 0) {
             $sql = "INSERT INTO usertbl
@@ -26,7 +28,7 @@ if (isset($_POST["register"])) {
                 VALUES
                 ('$full_name', '$email', '$username', '$password')";
 
-            $result = mysql_query($sql);
+            $result = mysqli_query($sql);
 
             if ($result) {
                 $message = "Cuenta correctamente creada";
@@ -40,7 +42,7 @@ if (isset($_POST["register"])) {
 }
 
 if (!empty($message)) {
-    echo "<p class=\"error\">" . "MENSAJE: " . $message . "</p>";
+    echo "<p class=\"error\">" . $message . "</p>";
 }
 
 include "src/views/register.php";
