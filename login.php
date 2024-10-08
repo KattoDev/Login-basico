@@ -20,7 +20,7 @@ if (isset($_POST["login"])) {
         $password = $_POST["password"];
 
         $sql = "SELECT * FROM usertbl WHERE username ='" . $username . "' AND password = '" . $password . "'";
-        $query = mysqli_query($sql);
+        $query = mysqli_query($connection,$sql);
 
         $numrows = mysqli_num_rows($query);
         if ($numrows != 0) {
@@ -49,6 +49,7 @@ if (isset($_POST["login"])) {
 }
 
 include "src/views/login.php";
+
 include "src/includes/footer.php";
 if (!empty($message)) {
     echo '<p class=\"error\">" . "MESSAGE: " . "</p>';
