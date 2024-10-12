@@ -39,6 +39,7 @@ una vez se está ejecutando ve a http://localhost:8000
 > [!IMPORTANT]
 > Asegurate de que la pagina principal del login aparezca el estado como conectado
 > Se ha de ver tal que así:
+> 
 > <img src="./app.png" width=600 />
 
 # Creditos
