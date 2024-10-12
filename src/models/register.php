@@ -1,6 +1,6 @@
 <?php
-require_once "src/includes/connection.php";
-include "src/includes/header.php";
+require_once "../includes/connection.php";
+include "../includes/header/header_register.php";
 
 if (isset($_POST["register"])) {
 
@@ -19,7 +19,7 @@ if (isset($_POST["register"])) {
     } else {
 
         $sql = "SELECT * FROM usertbl WHERE username='" . $username . "'";
-        $query = mysqli_query($sql);
+        $query = mysqli_query($connection, $sql);
         $numrows = mysqli_num_rows($query);
 
         if ($numrows == 0) {
@@ -28,7 +28,7 @@ if (isset($_POST["register"])) {
                 VALUES
                 ('$full_name', '$email', '$username', '$password')";
 
-            $result = mysqli_query($sql);
+            $result = mysqli_query($connection, $sql);
 
             if ($result) {
                 $message = "Cuenta correctamente creada";
@@ -45,5 +45,5 @@ if (!empty($message)) {
     echo "<p class=\"error\">" . $message . "</p>";
 }
 
-include "src/views/register.php";
-include "src/includes/footer.php";
+include "../views/register.php";
+include "../includes/footer/footer_intropage.php";
