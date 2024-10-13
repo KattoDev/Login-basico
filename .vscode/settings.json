@@ -1,10 +1,13 @@
 {
     "workbench.editor.customLabels.patterns": {
-        "**/includes/**": "${filename}.${extname} - Includes 🗃️",
-        "**/css/**": "${filename}.${extname} - CSS ✨",
-        "**/views/**": "${filename}.${extname} - views 👀",
-        "**/database/**": "${filename}.${extname} - database 💽",
-        "**/assets/**": "${filename}.${extname} - assets 📼",
-        "**/src/**": "${filename}.${extname} - source"
+        "**/src/**": "${filename}.${extname} - source",
+        
+        "**/src/css/**": "${filename}.${extname} - CSS ✨",
+        "**/src/database/**": "${filename}.${extname} - database 💽",
+        "**/src/assets/**": "${filename}.${extname} - assets 📼",
+
+        "**/src/models/**": "${filename}.${extname} - models",
+        "**/src/views/**": "${filename}.${extname} - views 👀",
+        "**/src/controllers/**": "${filename}.${extname} - controllers 🗃️",
     }
 }
